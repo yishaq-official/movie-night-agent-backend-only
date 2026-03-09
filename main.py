@@ -22,10 +22,11 @@ app.include_router(sessions.router)
 app.include_router(users.router)
 app.include_router(movies.router) 
 
+@app.get("/")
+def read_root():
+    return {"message": "Movie Night Agent API is running."}
+
 @app.get("/health")
 def health_check():
     return {"status": "Database connected and Agent is online."}
 
-@app.get("/")
-def read_root():
-    return {"message": "Movie Night Agent API is running."}

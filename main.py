@@ -25,3 +25,7 @@ app.include_router(movies.router)
 @app.get("/health")
 def health_check():
     return {"status": "Database connected and Agent is online."}
+
+@app.get("/")
+def read_root():
+    return {"message": "Movie Night Agent API is running."}
